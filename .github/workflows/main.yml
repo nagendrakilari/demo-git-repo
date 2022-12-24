@@ -6,6 +6,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Checking Docker Images
+      - name: Build Image
         shell: cmd
-        run: docker images
+        run: docker build -t nagendrakilari/demo-git-repo . 
+      - name: Push Image
+        shell: cmd
+        run: docker push nagendrakilari/demo-git-repo
